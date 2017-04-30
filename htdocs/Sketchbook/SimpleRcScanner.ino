@@ -5,9 +5,11 @@ static unsigned int timings[SAMPLESIZE];
 static unsigned int pos = 0;
 static unsigned long lastTime = 0;
 
+static int receiverPin = 2;
 static int interruptPin = 0;
 
 void setup() {
+  interruptPin = digitalPinToInterrupt(receiverPin);
   Serial.begin(9600); 
   attachInterrupt(interruptPin, handleInterrupt, CHANGE);
   pinMode(13, OUTPUT);
@@ -26,10 +28,12 @@ void loop() {
     Serial.println();
       
     detachInterrupt(interruptPin);
+  
+    int finalstate = digitalRead(receiverPin);
     
     char s = Serial.read();
     
-    for (unsigned int i = pos; i< SAMPLESIZE; i++) {
+    for (unsigned int i = pos + finalstate; i< SAMPLESIZE; i++) {
       Serial.print( timings[i] );
       Serial.print(",");
     }
