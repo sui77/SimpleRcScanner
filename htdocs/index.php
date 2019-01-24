@@ -3,7 +3,7 @@ session_start();
 ?><html>
 <head>
     <title>rc-switch raw data viewer</title>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <a href="./Sketchbook/SimpleRcScanner.ino">Arduino Sketch</a> | <a href="https://github.com/sui77/rc-switch">rc-switch</a> | <a href="https://github.com/sui77/SimpleRcScanner">$this source</a>
