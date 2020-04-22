@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     // for more information.
     static int receiverPin = 2;
 
-    if(wiringPiSetup() == -1) {
+    if (wiringPiSetup() == -1) {
         printf("wiringPiSetup failed, exiting...");
         return 0;
     }
@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 5; i>0; i--) {
         printf("%i... ", i );
+        fflush(stdout);
         delay(1000);
     }
     recording = false;
